@@ -12,8 +12,14 @@ export default function App() {
   use(promise)
   const data = useSyncExternalStore(
     sub,
-    getClientSnapshot,
-    getServerSnapshot
+    () => {
+      console.log('call getSnapshot')
+      return getClientSnapshot()
+    },
+    () => {
+      console.log('call getServerSnapshot')
+      return getServerSnapshot()
+    }
   )
   return <div>{data}</div>
 }
