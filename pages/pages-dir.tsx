@@ -1,4 +1,3 @@
-'use client'
 import { useSyncExternalStore } from 'react'
 import { getClientSnapshot, getServerSnapshot, sub } from '~/lib/state'
 
