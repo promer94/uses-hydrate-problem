@@ -1,9 +1,13 @@
 'use client'
-import { useSyncExternalStore } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import { getClientSnapshot, getServerSnapshot, sub } from '~/lib/state'
 
 
 export default function App() {
+  useState(() => {
+    console.count('render counter')
+    return 0
+  })
   const data = useSyncExternalStore(
     sub,
     () => {
