@@ -1,6 +1,6 @@
 # Problem
 
-When doing streaming SSR( `StrictMode` and development mode ), `useSyncExternalStore` will do hydration twice. But in second hydration proceed, it seems that useSES does not use the result of `getServerSnapshot` as initial state, which will cause hydration error.
+In `StrictMode`, useSyncExternalStore` will do hydration twice. But in second hydration proceed, it seems that useSES does not use the result of `getServerSnapshot` as initial state, which will cause hydration error.
 
 
 ## Reproduce steps

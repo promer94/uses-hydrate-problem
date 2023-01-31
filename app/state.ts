@@ -1,4 +1,4 @@
-export let clientData = 0
+export let clientData = 1
 export const serverData = 0
 export const listener: (() => void)[] = []
 
@@ -12,11 +12,5 @@ export const sub = (callback: () => void) => {
     }
   }
 }
-
-export const updateClientData = (data: number) => {
-  clientData = data
-  listener.map(v => v())
-}
-
 export const getClientSnapshot = () => clientData
 export const getServerSnapshot = () => serverData
